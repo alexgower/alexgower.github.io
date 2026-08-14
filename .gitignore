@@ -1,0 +1,12 @@
+vendor
+_site
+.jekyll-cache
+.jekyll-metadata
+.bundle/config
+.sass-cache
+.DS_Store
+node_modules/
+BRIEF.md
+alexgower-homepage-mockup.html
+background.jpg
+profile_photo.jpg
