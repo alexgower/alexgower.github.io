@@ -1,0 +1,16 @@
+<header class="hero">
+  <picture>
+    <source srcset="{{ '/assets/img/headshot-480.webp' | relative_url }}" type="image/webp">
+    <img
+      class="avatar"
+      src="{{ '/assets/img/headshot.jpg' | relative_url | bust_file_cache }}"
+      alt="Portrait of Alex Gower"
+      width="190"
+      height="190"
+      loading="eager"
+    >
+  </picture>
+  <h1>{{ site.first_name }} {{ site.last_name }}</h1>
+  <p class="role">{{ page.subtitle }}</p>
+  <div class="socials" aria-label="Profiles">{% include social.liquid %}</div>
+</header>
