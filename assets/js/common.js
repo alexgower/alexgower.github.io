@@ -1,60 +1,30 @@
-$(document).ready(function () {
-  // add toggle functionality to abstract, award and bibtex buttons
-  $("a.abstract").click(function () {
-    $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
-  });
-  $("a.award").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
-  });
-  $("a.bibtex").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden").toggleClass("open");
-  });
-  $("a").removeClass("waves-effect waves-light");
-
-  // bootstrap-toc
-  if ($("#toc-sidebar").length) {
-    // remove related publications years from the TOC
-    $(".publications h2").each(function () {
-      $(this).attr("data-toc-skip", "");
-    });
-    var navSelector = "#toc-sidebar";
-    var $myNav = $(navSelector);
-    Toc.init($myNav);
-    $("body").scrollspy({
-      target: navSelector,
-      offset: 100,
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile nav toggle
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      const open = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
   }
 
-  // add css to jupyter notebooks
-  const cssLink = document.createElement("link");
-  cssLink.href = "../css/jupyter.css";
-  cssLink.rel = "stylesheet";
-  cssLink.type = "text/css";
-
-  let jupyterTheme = determineComputedTheme();
-
-  $(".jupyter-notebook-iframe-container iframe").each(function () {
-    $(this).contents().find("head").append(cssLink);
-
-    if (jupyterTheme == "dark") {
-      $(this).bind("load", function () {
-        $(this).contents().find("body").attr({
-          "data-jp-theme-light": "false",
-          "data-jp-theme-name": "JupyterLab Dark",
+  // Toggle functionality for abstract / award / bibtex buttons on publication entries
+  const panels = ["abstract", "award", "bibtex"];
+  panels.forEach(function (name) {
+    document.querySelectorAll("a." + name).forEach(function (link) {
+      link.addEventListener("click", function () {
+        const entry = link.closest("li") || link.parentElement.parentElement;
+        panels.forEach(function (other) {
+          entry.querySelectorAll("." + other + ".hidden").forEach(function (panel) {
+            if (other === name) {
+              panel.classList.toggle("open");
+            } else {
+              panel.classList.remove("open");
+            }
+          });
         });
       });
-    }
-  });
-
-  // trigger popovers
-  $('[data-toggle="popover"]').popover({
-    trigger: "hover",
+    });
   });
 });
