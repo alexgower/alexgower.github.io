@@ -448,6 +448,40 @@ main.content {
   }
 }
 
+/* CV page */
+.btn-cv {
+  display: inline-block;
+  background: var(--bluegrey);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+
+  &:hover {
+    background: var(--bluegrey-dark);
+    color: #fff;
+  }
+}
+
+.cv-embed {
+  height: 78vh;
+  min-height: 420px;
+  margin: 24px 0 40px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  overflow: hidden;
+
+  object {
+    display: block;
+  }
+
+  // fallback content padding when the PDF cannot be embedded
+  p {
+    padding: 24px;
+  }
+}
+
 /* ================= FOOTER ================= */
 footer {
   border-top: 1px solid var(--global-divider-color);
