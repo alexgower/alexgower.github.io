@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://alexgower.github.io/sitemap.xml
+Sitemap: https://alexgower.co.uk/sitemap.xml
