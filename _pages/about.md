@@ -42,7 +42,7 @@ Most neural networks compute by pushing neuron activations forward, layer by lay
 
 
 ### Why do I do it?
-The human brain runs on roughly 20 watts — much less than even that of a toaster — and no model trained in a datacentre (consuming many orders of magnitude more) has matched the generality of its intelligence. This means both that we're wasting electricity, and that we're missing something about human intelligence which gives it such efficiency. Understanding this better could therefore help to save the planet and reveal more about human intelligence at the same time.
+The human brain runs on roughly 20 watts — much less than even that of a toaster — and no model trained in a datacentre (consuming many orders of magnitude more energy) has matched the generality of its intelligence. This means both that we're wasting electricity, and that we're missing something about human intelligence which gives it such efficiency. Understanding this better could therefore help to save the planet and reveal more about human intelligence at the same time.
 
 
 ### What do I *really* do?
