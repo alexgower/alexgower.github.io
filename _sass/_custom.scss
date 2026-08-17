@@ -152,6 +152,7 @@ h6 {
       linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.5) 100%),
       image-set(url("../img/banner-480.webp") type("image/webp"), url("../img/banner.jpg") type("image/jpeg"));
   }
+
   background-size: cover;
   background-position: center;
 
@@ -278,7 +279,7 @@ main.content {
   margin: 0 auto;
   padding: 70px 28px 80px;
 
-  section + section {
+  section+section {
     margin-top: 72px;
   }
 
@@ -304,8 +305,218 @@ main.content {
     margin-bottom: 14px;
   }
 
-  p + p {
+  p+p {
     margin-top: 18px;
+  }
+}
+
+/* lead summary + three-thread teaser at the top of the about page */
+.lead {
+  font-size: 1.3rem;
+  line-height: 1.55;
+  color: var(--ink-strong);
+  margin: 0 0 26px;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.threads {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  font-size: 1.08rem;
+
+  li {
+    position: relative;
+    padding-left: 22px;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+  }
+
+  .thread-name {
+    font-weight: 700;
+    color: var(--ink-strong);
+  }
+}
+
+/* collapsible long-form detail on the about page */
+details.longer {
+  margin-top: 30px;
+  border-top: 1px solid var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+
+  >summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--bluegrey);
+    list-style: none; // Firefox
+    transition: color 0.15s ease;
+
+    &::-webkit-details-marker {
+      display: none; // Safari
+    }
+
+    // caret, rotates when open
+    &::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 7px solid currentColor;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      transition: transform 0.15s ease;
+    }
+
+    &:hover {
+      color: var(--bluegrey-dark);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--indigo);
+      outline-offset: 3px;
+    }
+  }
+
+  &[open]>summary::before {
+    transform: rotate(90deg);
+  }
+
+  >summary+* {
+    margin-top: 4px;
+  }
+
+  >*:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  details.longer>summary,
+  details.longer>summary::before {
+    transition: none;
+  }
+}
+
+/* ============ CREDITED ANIMATION CLIPS ============ */
+.clip {
+  margin: 30px 0;
+
+  .clip-media {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #0f1113; // matches the dark backdrop most maths animations use
+    line-height: 0;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--global-text-color-light);
+    line-height: 1.45;
+  }
+}
+
+/* two clips side by side, stacking on narrow screens */
+.clip-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 26px 0;
+
+  .clip {
+    margin: 0;
+  }
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+/* corner credit badge — always legible, brightens on hover/focus */
+.clip-credit {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(3px);
+  text-decoration: none;
+  opacity: 0.72;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.68);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--indigo);
+    outline-offset: 2px;
+  }
+}
+
+.clip-credit-arrow {
+  font-size: 0.72rem;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .lead {
+    font-size: 1.15rem;
+  }
+
+  .threads {
+    font-size: 1rem;
+  }
+
+  .clip-credit {
+    left: 7px;
+    bottom: 7px;
+    font-size: 0.72rem;
+    padding: 4px 8px;
   }
 }
 
@@ -367,7 +578,7 @@ main.content {
     padding: 0;
     margin: 0;
 
-    > li {
+    >li {
       padding: 18px 0;
       border-bottom: 1px solid var(--global-divider-color);
 
@@ -499,7 +710,7 @@ footer {
     margin: 0;
   }
 
-  p + p {
+  p+p {
     margin-top: 6px;
   }
 }

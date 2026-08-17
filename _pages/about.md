@@ -12,6 +12,64 @@ announcements:
   limit: 5
 ---
 
-I work on the physics of machine learning: training algorithms that let physical systems learn by settling, rather than by backpropagation. My PhD, joint between the Math & Algorithms Group at **Nokia Bell Labs** and the Theoretical Condensed Matter Group at the **University of Cambridge**, centres on **Equilibrium Propagation** — from state-of-the-art EP training on analog Oscillator Ising Machines, now being implemented in hardware with Nokia and TU Eindhoven, to **GradEP**, which extends EP to train energy gradients and enabled the first EP-trained flow matching generative model (Best Paper, ICONS '26).
+### What do I do?
 
-A second thread connects this to statistical physics: gradient descent on rugged energy landscapes, where we uncovered a saddles-to-minima topological crossover controlling glassy dynamics, using the Rubik's Cube as a model system. Alongside the PhD, I lead machine learning work on violence risk forecasting at the Alan Turing Institute & UK Ministry of Justice.
+<p class="lead">
+Most neural networks compute by pushing neuron activations forward, layer by layer, through a network. The ones I work on compute by <strong>falling downhill</strong> — every neuron settling at the same time into a local minimum of an overarching energy landscape. That difference matters because a physical system can do the settling for you: it is the principle behind <strong>neuromorphic hardware</strong>, brain-inspired chips that compute with physics instead of simulating it on a GPU, for a fraction of the energy.
+</p>
+
+<div class="clip-pair">
+  {% include clip.liquid
+     path="assets/video/feedforward.mp4"
+     alt="Activations propagating forward through the layers of a neural network, one layer at a time"
+     caption="The usual picture: neuron values are pushed forward, layer by layer."
+     credit="©"
+     credit_url="https://www.youtube.com/watch?v=aircAruvnKk" %}
+
+  {% include clip.liquid
+     path="assets/video/gradient-descent.mp4"
+     alt="A ball descending a rugged three-dimensional surface into one of several local minima"
+     caption="Mine: neuron values evolve by rolling downhill on an energy landscape into a minimum."
+     credit="©"
+     credit_url="https://www.youtube.com/watch?v=IHZwWFHWa-w" %}
+</div>
+
+<ul class="threads">
+  <li><span class="thread-name">Algorithms</span>: I develop the learning rules that train these systems without backpropagation.</li>
+  <li><span class="thread-name">Hardware Applications</span>: I show how they map onto real physical devices, where the settling is done by physics rather than simulated.</li>
+  <li><span class="thread-name">Landscapes</span>: I study what decides whether a system settles somewhere useful or gets stuck.</li>
+</ul>
+
+
+### Why do I do it?
+The human brain runs on roughly 20 watts — much less than even that of a toaster — and no model trained in a datacentre (consuming many orders of magnitude more) has matched the generality of its intelligence. This means both that we're wasting electricity, and that we're missing something about human intelligence which gives it such efficiency. Understanding this better could therefore help to save the planet and reveal more about human intelligence at the same time.
+
+
+### What do I *really* do?
+
+<details class="longer" markdown="1">
+<summary>The longer version</summary>
+
+Everything I currently work on relates to **energy landscapes**: systems whose dynamics are (noisy) gradient descent to a local minimum, and the algorithms that train them. That covers energy-based and predictive coding models in machine learning, and — when the settling is performed by physics rather than simulated — learning directly on **neuromorphic hardware**.
+
+My PhD, joint between the Math & Algorithms Group at **Nokia Bell Labs** and the Theoretical Condensed Matter Group at the **University of Cambridge**, centres on **Equilibrium Propagation** (EP), which computes loss gradients from a system's own equilibria instead of a backward pass. 
+
+I first showed that **Oscillator Ising Machines** — CMOS oscillator networks originally built for combinatorial optimisation — have energy gradient descent dynamics and therefore can be trained using EP to state-of-the-art neuromorphic accuracy, and that training survives realistic hardware constraints. A hardware implementation is in its early stages with Nokia and TU Eindhoven.
+
+I then developed **GradEP**, a general mechanism extending EP from shaping energy *minima* to training energy *gradients*, bringing flow matching, score matching, and energy-based generation within reach of EP-compatible hardware. Its first application, FlowEqProp, is the first flow matching generative model trained by Equilibrium Propagation (Best Paper, ICONS '26). Current work combines EP with **predictive coding networks** and more expressive energy-based architectures.
+
+The same energy landscapes turn up in statistical physics when describing slow relaxation phenomena in (typically disordered) systems such as:
+- Glasses (struggling to find their global energy minimising crystal configuration)
+- Protein folding (struggling to find their native state)
+- Optimisation problems (struggling to find their optimal solution)
+
+Using the Rubik's Cube as a model disordered system, we found a **saddles-to-minima topological crossover** in the connectivity of critical points of the energy landscape which controls the existence and onset of glassy dynamics — a structural property of the landscape that decides whether noisy gradient descent gets stuck or finds its way to the global minimum.
+
+</details>
+
+
+### What else? 
+
+Alongside the PhD, I was a technical project lead in applied machine learning work on risk forecasting at the **Alan Turing Institute** and **UK Ministry of Justice**.
+
+I submit my thesis in May 2027, and will be looking for research roles in neuromorphic and/or energy-based machine learning from around then — do get in touch.

@@ -1,0 +1,29 @@
+{% comment %}
+  A short, credited animation clip: silent, autoplaying, looping.
+
+  Usage:
+    {% include clip.liquid
+       path="assets/video/feedforward.mp4"
+       alt="Activations propagating forward through the layers of a network"
+       caption="The usual picture: activations pushed forward, layer by layer."
+       credit="3b1b"
+       credit_url="https://www.youtube.com/watch?v=aircAruvnKk" %}
+{% endcomment %}
+
+<figure class="clip">
+  <div class="clip-media">
+    <video
+      src="{{ include.path | relative_url | bust_file_cache }}"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      aria-label="{{ include.alt }}"
+    ></video>
+    <a class="clip-credit" href="{{ include.credit_url }}" target="_blank" rel="noopener">
+      <span class="sr-only">Animation by </span>{{ include.credit }}<span class="clip-credit-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>

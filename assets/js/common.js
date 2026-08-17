@@ -9,6 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Respect prefers-reduced-motion for autoplaying animation clips: pause them and
+  // give the viewer controls so they can play each one deliberately.
+  const stillPlease = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (stillPlease.matches) {
+    document.querySelectorAll(".clip video[autoplay]").forEach(function (video) {
+      video.removeAttribute("autoplay");
+      video.loop = false;
+      video.controls = true;
+      video.pause();
+    });
+  }
+
   // Toggle functionality for abstract / award / bibtex buttons on publication entries
   const panels = ["abstract", "award", "bibtex"];
   panels.forEach(function (name) {
