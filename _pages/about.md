@@ -54,16 +54,16 @@ Everything I currently work on relates to **energy landscapes**: systems whose d
 
 My PhD, joint between the Math & Algorithms Group at **Nokia Bell Labs** and the Theoretical Condensed Matter Group at the **University of Cambridge**, centres on **Equilibrium Propagation** (EP), which computes loss gradients from a system's own equilibria instead of a backward pass. 
 
-I first showed that **Oscillator Ising Machines** — CMOS oscillator networks originally built for combinatorial optimisation — have energy gradient descent dynamics and therefore can be trained using EP to state-of-the-art neuromorphic accuracy, and that training survives realistic hardware constraints. A hardware implementation is in its early stages with Nokia and TU Eindhoven.
+I first showed that **Oscillator Ising Machines** — CMOS oscillator networks originally built for combinatorial optimisation — have energy gradient descent dynamics and therefore [can be trained using EP](/publications/#gower2025oim) to state-of-the-art neuromorphic accuracy, and that [training survives realistic hardware constraints](/publications/#gower2025speedofphysics). A hardware implementation is in its early stages with Nokia and TU Eindhoven.
 
-I then developed **GradEP**, a general mechanism extending EP from shaping energy *minima* to training energy *gradients*, bringing flow matching, score matching, and energy-based generation within reach of EP-compatible hardware. Its first application, FlowEqProp, is the first flow matching generative model trained by Equilibrium Propagation (Best Paper, ICONS '26). Current work combines EP with **predictive coding networks** and more expressive energy-based architectures.
+I then developed **GradEP**, a general mechanism extending EP from shaping energy *minima* to training energy *gradients*, bringing flow matching, score matching, and energy-based generation within reach of EP-compatible hardware. Its first application, [FlowEqProp](/publications/#gower2026floweqprop), is the first flow matching generative model trained by Equilibrium Propagation (Best Paper, ICONS '26). Current work combines EP with **predictive coding networks** and more expressive energy-based architectures.
 
 The same energy landscapes turn up in statistical physics when describing slow relaxation phenomena in (typically disordered) systems such as:
-- Glasses (struggling to find their global energy minimising crystal configuration)
+- Glass (struggling to find its global energy minimising crystal configuration)
 - Protein folding (struggling to find their native state)
 - Optimisation problems (struggling to find their optimal solution)
 
-Using the Rubik's Cube as a model disordered system, we found a **saddles-to-minima topological crossover** in the connectivity of critical points of the energy landscape which controls the existence and onset of glassy dynamics — a structural property of the landscape that decides whether noisy gradient descent gets stuck or finds its way to the global minimum.
+Using the Rubik's Cube as a model disordered system, we found a [**saddles-to-minima topological crossover**](/publications/#gower2024rubiks) in the connectivity of critical points of the energy landscape which controls the existence and onset of glassy dynamics — a structural property of the landscape that decides whether noisy gradient descent gets stuck or finds its way to the global minimum.
 
 </details>
 
