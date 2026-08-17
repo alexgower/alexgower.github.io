@@ -50,7 +50,7 @@ The human brain runs on roughly 20 watts — much less than even that of a toast
 <details class="longer" markdown="1">
 <summary>The longer version</summary>
 
-Everything I currently work on relates to **energy landscapes**: systems whose dynamics are (noisy) gradient descent to a local minimum, and the algorithms that train them. That covers energy-based and predictive coding models in machine learning, and — when the settling is performed by physics rather than simulated — learning directly on **neuromorphic hardware**.
+Everything I currently work on relates to **energy landscapes**: systems whose dynamics are (noisy) gradient descent to a local minimum, and the algorithms that train them. That covers energy-based and predictive coding models in machine learning; learning directly on **neuromorphic hardware**, where the settling is performed by physics rather than simulated; and the statistical physics of **slow relaxation**, which asks what properties of landscapes lets those dynamics reach a good minimum instead of getting trapped in a bad one.
 
 My PhD, joint between the Math & Algorithms Group at **Nokia Bell Labs** and the Theoretical Condensed Matter Group at the **University of Cambridge**, centres on **Equilibrium Propagation** (EP), which computes loss gradients from a system's own equilibria instead of a backward pass. 
 
