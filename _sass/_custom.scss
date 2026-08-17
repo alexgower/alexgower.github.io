@@ -141,13 +141,17 @@ h6 {
     linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.5) 100%),
     image-set(url("../img/banner-1400.webp") type("image/webp"), url("../img/banner.jpg") type("image/jpeg"));
 
-  @media (max-width: 800px) {
+  // The narrow-screen variants are sized in *physical* pixels, so they may only be
+  // served to low-density screens: a 3x iPhone is 393 CSS px wide but 1179 real
+  // pixels, and would upscale banner-480 by 2.5x. High-density screens of any width
+  // fall through to the 1400px default above.
+  @media (max-width: 800px) and (max-resolution: 1.5dppx) {
     background-image:
       linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.5) 100%),
       image-set(url("../img/banner-800.webp") type("image/webp"), url("../img/banner.jpg") type("image/jpeg"));
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 480px) and (max-resolution: 1.5dppx) {
     background-image:
       linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.5) 100%),
       image-set(url("../img/banner-480.webp") type("image/webp"), url("../img/banner.jpg") type("image/jpeg"));
