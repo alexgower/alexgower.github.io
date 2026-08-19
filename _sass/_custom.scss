@@ -697,6 +697,45 @@ details.longer {
   }
 }
 
+/* CV summary entries below the embedded PDF */
+.cv-entry {
+  margin-bottom: 1.6rem;
+
+  p {
+    margin: 4px 0 0;
+  }
+}
+
+.cv-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cv-entry-title {
+  font-weight: 700;
+  color: var(--ink-strong);
+}
+
+.cv-entry-date {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--bluegrey);
+  white-space: nowrap;
+}
+
+.cv-entry-sub {
+  font-size: 0.92rem;
+  color: #546e7a;
+  margin: 2px 0 6px;
+}
+
+.cv-footnote {
+  margin-top: 2.5rem;
+}
+
 /* ================= FOOTER ================= */
 footer {
   border-top: 1px solid var(--global-divider-color);
