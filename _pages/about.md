@@ -15,34 +15,34 @@ announcements:
 ### What do I do?
 
 <p class="lead">
-Most neural networks compute by pushing neuron activations forward, layer by layer, through a network. The ones I work on compute by <strong>falling downhill</strong> — every neuron settling at the same time into a local minimum of an overarching energy landscape. That difference matters because a physical system can do the settling for you: it is the principle behind <strong>neuromorphic hardware</strong>, brain-inspired chips that compute with physics instead of simulating it on a GPU, for a fraction of the energy.
+Most neural networks compute by pushing neuron activations forward through a network, layer by layer. The neural networks I work on compute by <strong>falling downhill</strong> — every neuron settling into a local minimum of an overarching energy landscape <strong>at the same time</strong>. That difference matters because a physical system can do the settling for you: it is the principle behind <strong>neuromorphic hardware</strong>, brain-inspired chips that compute with physics instead of simulating it on a GPU, for a fraction of the energy.
 </p>
 
 <div class="clip-pair">
   {% include clip.liquid
      path="assets/video/feedforward.mp4"
      alt="Activations propagating forward through the layers of a neural network, one layer at a time"
-     caption="The usual picture: neuron values are pushed forward, layer by layer."
+     caption="Feedforward neural networks: neuron values are pushed forward, layer by layer."
      credit="©"
      credit_url="https://www.youtube.com/watch?v=aircAruvnKk" %}
 
   {% include clip.liquid
      path="assets/video/gradient-descent.mp4"
      alt="A ball descending a rugged three-dimensional surface into one of several local minima"
-     caption="Mine: neuron values evolve by rolling downhill on an energy landscape into a minimum."
+     caption="Energy-based neural networks: neuron values evolve by rolling downhill on an energy landscape into a minimum."
      credit="©"
      credit_url="https://www.youtube.com/watch?v=IHZwWFHWa-w" %}
 </div>
 
 <ul class="threads">
-  <li><span class="thread-name">Algorithms</span>: I develop the learning rules that train these systems without backpropagation.</li>
-  <li><span class="thread-name">Hardware Applications</span>: I show how they map onto real physical devices, where the settling is done by physics rather than simulated.</li>
-  <li><span class="thread-name">Landscapes</span>: I study what decides whether a system settles somewhere useful or gets stuck.</li>
+  <li><span class="thread-name">Algorithms</span>: I develop learning rules that train these systems without backpropagation.</li>
+  <li><span class="thread-name">Hardware Applications</span>: I show how the algorithms map onto real physical devices, where the settling is done by physics rather than being simulated.</li>
+  <li><span class="thread-name">Landscapes</span>: I study what determines whether a system settles somewhere useful or whether it gets stuck.</li>
 </ul>
 
 
 ### Why do I do it?
-The human brain runs on roughly 20 watts — much less than even that of a toaster — and no model trained in a datacentre (consuming many orders of magnitude more energy) has matched the generality of its intelligence. This means both that we're wasting electricity, and that we're missing something about human intelligence which gives it such efficiency. Understanding this better could therefore help to save the planet and reveal more about human intelligence at the same time.
+The human brain runs on roughly 20 watts — much less than that of a toaster. Models trained in datacentres consume orders of magnitude more energy than the human brain, yet they still cannot match the generality of the brain’s intelligence. We are both wasting electricity, and missing something crucial about what makes human intelligence so efficient. By understanding this better, we can help protect the planet and uncover more about human intelligence at the same time.
 
 
 ### What do I *really* do?
@@ -54,12 +54,12 @@ Everything I currently work on relates to **energy landscapes**: systems whose d
 
 My PhD, joint between the Math & Algorithms Group at **Nokia Bell Labs** and the Theoretical Condensed Matter Group at the **University of Cambridge**, centres on **Equilibrium Propagation** (EP), which computes loss gradients from a system's own equilibria instead of a backward pass. 
 
-I first showed that **Oscillator Ising Machines** — CMOS oscillator networks originally built for combinatorial optimisation — have energy gradient descent dynamics and therefore [can be trained using EP](/publications/#gower2025oim) to state-of-the-art neuromorphic accuracy, and that [training survives realistic hardware constraints](/publications/#gower2025speedofphysics). A hardware implementation is in its early stages with Nokia and TU Eindhoven.
+I first showed that **Oscillator Ising Machines** — CMOS oscillator networks originally built for combinatorial optimisation — have energy gradient descent dynamics and therefore [can be trained using EP](/publications/#gower2025oim) to state-of-the-art neuromorphic accuracy, and that [training survives realistic hardware constraints](/publications/#gower2025speedofphysics). A hardware implementation is currently in its early stages with Nokia and TU Eindhoven.
 
 I then developed **GradEP**, a general mechanism extending EP from shaping energy *minima* to training energy *gradients*, bringing flow matching, score matching, and energy-based generation within reach of EP-compatible hardware. Its first application, [FlowEqProp](/publications/#gower2026floweqprop), is the first flow matching generative model trained by Equilibrium Propagation (Best Paper, ICONS '26). Current work combines EP with **predictive coding networks** and more expressive energy-based architectures.
 
 The same energy landscapes turn up in statistical physics when describing slow relaxation phenomena in (typically disordered) systems such as:
-- Glass (struggling to find its global energy minimising crystal configuration)
+- Glass (struggling to find its global minimum energy crystal configuration)
 - Protein folding (struggling to find their native state)
 - Optimisation problems (struggling to find their optimal solution)
 
