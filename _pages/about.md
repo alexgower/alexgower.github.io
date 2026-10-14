@@ -42,7 +42,12 @@ Most neural networks compute by pushing neuron activations forward through a net
 
 
 ### Why do I do it?
-The human brain runs on roughly 20 watts — much less than that of a toaster. Models trained in datacentres consume orders of magnitude more energy than the human brain, yet they still cannot match the generality of the brain’s intelligence. We are both wasting electricity, and missing something crucial about what makes human intelligence so efficient. By understanding this better, we can help protect the planet and uncover more about human intelligence at the same time.
+Two reasons. The first is energy. The human brain runs on about 20 watts (about as much as a lightbulb 💡), while training a large model in a datacentre takes thousands of times more, and the model still can’t match the generality of the brain’s intelligence. New 'neuromorphic' hardware that computes by settling, inspired by models of the human brain, could close much of that gap.
+
+
+The second is that relaxation on an energy landscape is one of the oldest ideas about how brains might learn (see Hopfield networks and predictive coding networks etc). The machine learning community largely set it aside, not because it was necessarily wrong but because it ran slowly on GPUs. Enabling these models to run quickly on neuromorphic hardware lets us take the idea seriously again, at modern scale, and explore potential advantages of these approaches.
+
+Ultimately we are both wasting electricity, and missing something crucial about what makes human intelligence so efficient. By understanding this better, we can help protect the planet and uncover more about human intelligence at the same time.
 
 
 ### What do I *really* do?
@@ -56,7 +61,9 @@ My PhD, joint between the Math & Algorithms Group at **Nokia Bell Labs** and the
 
 I first showed that **Oscillator Ising Machines** — CMOS oscillator networks originally built for combinatorial optimisation — have energy gradient descent dynamics and therefore [can be trained using EP](/publications/#gower2025oim) to state-of-the-art neuromorphic accuracy, and that [training survives realistic hardware constraints](/publications/#gower2025speedofphysics). A hardware implementation is currently in its early stages with Nokia and TU Eindhoven.
 
-I then developed **GradEP**, a general mechanism extending EP from shaping energy *minima* to training energy *gradients*, bringing flow matching, score matching, and energy-based generation within reach of EP-compatible hardware. Its first application, [FlowEqProp](/publications/#gower2026floweqprop), is the first flow matching generative model trained by Equilibrium Propagation (Best Paper, ICONS '26). Current work combines EP with **predictive coding networks** and more expressive energy-based architectures.
+I then developed **GradEP**, which extends EP from training the *locations* of local energy minima to training the *gradient* of the energy landscape. That makes flow matching, score matching and energy-based generation trainable with local rules and therefore on neuromorphic hardware. Its first application, [FlowEqProp](/publications/#gower2026floweqprop), was the first flow-matching generative model trained by EP, and won Best Paper at ICONS '26.
+
+Most recently, in [PotentialEP](https://arxiv.org/abs/2610.14409), I turned to **predictive-coding networks**, hierarchical energy models first proposed as a theory of the cortex. I proved that adding a single linear term to their energy makes the relaxed network output the gradient of an Energy Matching potential. Trained entirely by EP, with no backpropagation at any stage, the model reaches 3.64 FID on CIFAR-10, against 3.54 for the same network trained by backprop. To my knowledge, no backprop-free generative model has come close to this quality before. A hardware-friendly version of the architecture, built only from local convolutions and pointwise nonlinearities with no normalisation or attention, reaches and FID of 3.51, so the operations that are hardest to build in analogue hardware turn out not to be needed. Along the way I found why EP’s usable nudging range was so narrow for this objective, and fixed it with a linearised nudge that widens the range by about four orders of magnitude.
 
 The same energy landscapes turn up in statistical physics when describing slow relaxation phenomena in (typically disordered) systems such as:
 - Glass (struggling to find its global minimum energy crystal configuration)

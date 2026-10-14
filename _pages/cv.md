@@ -25,7 +25,7 @@ nav_order: 4
     <span class="cv-entry-date">2022 – present</span>
   </div>
   <div class="cv-entry-sub">Jesus College · Math &amp; Algorithms Group (Bell Labs) and Theoretical Condensed Matter Group (Cambridge)</div>
-  <p><em>The Physics of Machine Learning on Oscillator Ising Machines</em> — Equilibrium Propagation, energy-based learning, and neuromorphic hardware. Thesis submission May 2027.</p>
+  <p>Thesis: <em>Learning by Relaxation: Equilibrium Propagation for Neuromorphic Generative Modelling</em>. Supervisors: Prof. Claudio Castelnovo (Cambridge), Dr Joachim Wabnig (Nokia Bell Labs). Thesis submission May 2027.</p>
 </div>
 
 <div class="cv-entry">
@@ -44,7 +44,7 @@ nav_order: 4
     <span class="cv-entry-title">PhD Researcher — Nokia Bell Labs &amp; University of Cambridge</span>
     <span class="cv-entry-date">2022 – present</span>
   </div>
-  <p>Introduced <strong>GradEP</strong>, extending Equilibrium Propagation from shaping energy minima to training energy gradients, and built <strong>FlowEqProp</strong>, the first EP-trained flow matching generative model (Best Paper, ICONS '26). Developed EP training for <strong>Oscillator Ising Machines</strong> to state-of-the-art neuromorphic accuracy under realistic hardware constraints; a hardware implementation is underway with Nokia and TU Eindhoven. Uncovered a saddles-to-minima topological crossover governing glassy dynamics on rugged energy landscapes (submitted to <em>Nature Physics</em>).</p>
+  <p>Proved that a predictive-coding network with one added linear energy term carries the gradient of an Energy Matching potential, and trained it entirely by Equilibrium Propagation to 3.64 FID on CIFAR-10 (3.54 for backprop), the first backprop-free generative model at this quality (<strong>PotentialEP</strong>). Introduced <strong>GradEP</strong>, extending EP from shaping energy minima to training energy gradients, and built <strong>FlowEqProp</strong>, the first EP-trained flow-matching generative model (Best Paper, ICONS '26). Developed EP training for <strong>Oscillator Ising Machines</strong> matching backprop on MNIST under realistic hardware constraints; a hardware implementation is under way with Nokia and TU Eindhoven. Uncovered a saddles-to-minima topological crossover governing glassy dynamics on rugged energy landscapes (submitted to <em>Nature Communications</em>).</p>
 </div>
 
 <div class="cv-entry">
@@ -82,15 +82,25 @@ nav_order: 4
 ### Teaching &amp; supervision
 
 <div class="cv-entry">
-  <p>Supervised undergraduate <strong>Statistical Mechanics</strong> and <strong>Mathematical Methods</strong> classes at Cambridge for three years, and a Master's dissertation on saddles-to-minima crossovers in kinetically constrained Ising models.</p>
+  <p>Supervised undergraduate <strong>Statistical Mechanics</strong> and <strong>Mathematical Methods</strong> at Cambridge for three years (sole instructor, ~20 students). Supervised a Master’s dissertation on saddles-to-minima crossovers in kinetically constrained Ising models (2024–25); co-supervising a second from 2026.</p>
+</div>
+
+### Service
+
+<div class="cv-entry">
+  <p>Reviewer, NeurIPS Workshop on Machine Learning and the Physical Sciences (ML4PS), 2025–2026.</p>
 </div>
 
 ### Awards
 
 <div class="cv-entry">
 <ul>
-  <li><strong>Best Paper Award, ICONS '26</strong> — FlowEqProp.</li>
-  <li><strong>Ranked 1st of ~200</strong>, Oxford Physics second-year examinations.</li>
+  <li><strong>Best Paper Award</strong>, International Conference on Neuromorphic Systems (ICONS '26) — FlowEqProp</li>
+  <li><strong>Selected participant</strong>, ELLIS Cambridge Summer School on Probabilistic Machine Learning, 2026</li>
+  <li><strong>G-Research Grant</strong> (£2,000), 2025</li>
+  <li><strong>ICONS Student Travel Award</strong> ($1,000), 2025</li>
+  <li><strong>EPSRC CASE PhD Studentship</strong> with Nokia UK, 2022</li>
+  <li><strong>Winton Capital Prize</strong>, 1st of ~200 in Oxford Physics second-year examinations, 2020</li>
 </ul>
 </div>
 
@@ -98,7 +108,7 @@ nav_order: 4
 
 <div class="cv-entry">
   <p><strong>Languages:</strong> Python, Julia, MATLAB, C++, Java, R, FORTRAN. </p>
-  <p><strong>ML:</strong> PyTorch, TensorFlow, XGBoost, LightGBM, InterpretML.</p>
+  <p><strong>ML:</strong> PyTorch, JAX, NumPy, Hugging Face, XGBoost, LightGBM, InterpretML.</p>
   <p><strong>Infrastructure:</strong> SLURM/HPC, AWS, Git, Bash.</p>
 </div>
 

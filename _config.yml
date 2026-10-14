@@ -7,10 +7,11 @@ first_name: Alex
 middle_name:
 last_name: Gower
 description: >
-  Academic website of Alex Gower — PhD student at Nokia Bell Labs & the University of Cambridge
-  working on Equilibrium Propagation and physics-based machine learning.
+  Alex Gower — PhD student at Nokia Bell Labs and the University of Cambridge.
+  Learning algorithms for neuromorphic hardware: Equilibrium Propagation, predictive-coding
+  and energy-based models, and backprop-free generative modelling.
 footer_text:
-keywords: equilibrium propagation, oscillator ising machines, neuromorphic computing, machine learning, physics
+keywords: equilibrium propagation, oscillator ising machines, neuromorphic computing, machine learning, physics, predictive coding, energy-based models, generative models, backpropagation-free learning
 lang: en
 icon: ⚛️
 
