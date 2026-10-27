@@ -1,5 +1,6 @@
 {% comment %}
-  A short, credited animation clip: silent, autoplaying, looping.
+  A short animation clip: silent, autoplaying, looping. credit/credit_url are
+  optional; omit them for your own animations.
 
   Usage:
     {% include clip.liquid
@@ -21,9 +22,11 @@
       preload="metadata"
       aria-label="{{ include.alt }}"
     ></video>
-    <a class="clip-credit" href="{{ include.credit_url }}" target="_blank" rel="noopener">
-      <span class="sr-only">Animation by </span>{{ include.credit }}<span class="clip-credit-arrow" aria-hidden="true">↗</span>
-    </a>
+    {% if include.credit %}
+      <a class="clip-credit" href="{{ include.credit_url }}" target="_blank" rel="noopener">
+        <span class="sr-only">Animation by </span>{{ include.credit }}<span class="clip-credit-arrow" aria-hidden="true">↗</span>
+      </a>
+    {% endif %}
   </div>
-  <figcaption>{{ include.caption }}</figcaption>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
 </figure>

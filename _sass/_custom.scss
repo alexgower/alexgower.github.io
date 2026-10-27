@@ -420,6 +420,30 @@ details.longer {
   }
 }
 
+/* ============ BLOG POST FIGURES ============ */
+// centred, narrower figure for portrait photos and square animations
+.figure-narrow {
+  max-width: 420px;
+  margin: 30px auto;
+
+  .clip {
+    margin: 0;
+  }
+}
+
+// keep tiny generated samples crisp rather than blurred when scaled up
+.figure-pixelated img {
+  image-rendering: pixelated;
+  border-radius: 8px;
+}
+
+.figure-caption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  text-align: center;
+}
+
 /* ============ CREDITED ANIMATION CLIPS ============ */
 .clip {
   margin: 30px 0;

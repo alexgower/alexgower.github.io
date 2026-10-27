@@ -53,7 +53,7 @@ bing_site_verification:
 # -----------------------------------------------------------------------------
 
 blog_name: Blog
-blog_description: Notes on physics-based machine learning
+blog_description: Notes on backprop-free, bio-inspired learning and neuromorphic computing
 permalink: /blog/:year/:title/
 lsi: false
 
